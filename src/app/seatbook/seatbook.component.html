@@ -1,4 +1,4 @@
-<div class="container">
+<div class="main-container">
     <div class="row">
         <div class="col-sm-4">
             <h4>Enter Number of Passengers</h4>
@@ -20,7 +20,7 @@
                     </form>
                 </div>
                 <div class="col-sm-12">
-                    <p class="text-primary msg">{{message}}</p>
+                    <p class="text-primary message">{{message}}</p>
                 </div>
 
             </div>
@@ -30,17 +30,19 @@
             <ng-container *ngIf="(data$ | async) as d">
                 <p>Total {{d.total}} Booked: {{d.booked}} Left: {{d.rem}}</p>
                 <ng-container *ngFor="let r of d.seatChart">
-                    <div class="coach_row">
-                        <div class="circle rowx"> R{{r.row}} </div>
+                    <div class="row-coach">
+                        <div class="seat-container row-heading"> R{{r.row}} </div>
                         <ng-container *ngIf="r.row !== 5">
                             <ng-container *ngFor="let n of fourSeater;">
-                                <div class="circle seat" [ngClass]="checkBook(n,r.row,r.booked_seats) ? 'booked': ''">
+                                <div class="seat-container seat"
+                                    [ngClass]="checkBook(n,r.row,r.booked_seats) ? 'booked': ''">
                                     {{n + r.start-1}}</div>
                             </ng-container>
                         </ng-container>
                         <ng-container *ngIf="r.row === 5">
                             <ng-container *ngFor="let n of threeSeater;">
-                                <div class="circle seat" [ngClass]="checkBook(n,r.row, r.booked_seats) ? 'booked': ''">
+                                <div class="seat-container seat"
+                                    [ngClass]="checkBook(n,r.row, r.booked_seats) ? 'booked': ''">
                                     {{n + r.start-1}}</div>
                             </ng-container>
                         </ng-container>

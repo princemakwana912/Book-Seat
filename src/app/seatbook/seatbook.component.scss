@@ -1,44 +1,47 @@
-.container {
-    padding-top: 40px;
+.main-container {
+  background-image: url(../../assets/images/bus-seat.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  height: 100%;
 }
 
-.input{
-    margin-bottom: 10px;
+.input {
+  margin-bottom: 10px;
 }
 
-.coach_row {
-  /* border: 1px solid red; */
+.row-coach {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   margin-top: 1em;
+  gap: 10px;
+
 }
 
-.msg {
-  height: 2em;
+.message {
+  font-size: 16px;
 }
 
-.circle {
+.seat-container {
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-   width: 32px;
-  height: 32px;
-  border-radius: 100px;
+  width: 32px;
+  height: 72px;
+  border-radius: 10px;
   color: white;
-  
 }
 
-.rowx {
+.row-heading {
   margin-right: 32px;
-  font-size: 0.71em;
+  font-size: 12px;
   background: rgb(14, 12, 12);
 }
 
 .seat {
-background: rgb(19, 179, 53);
-margin: 0 2px;
+  background: rgb(191, 166, 166);
+  margin: 0 2px;
 }
 
 .seat.booked {
